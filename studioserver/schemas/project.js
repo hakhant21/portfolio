@@ -30,7 +30,7 @@ export default {
     },
     {
       name: 'mainImage',
-      title: 'Main image',
+      title: 'Project image',
       type: 'image',
       options: {
         hotspot: true,

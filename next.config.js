@@ -3,6 +3,7 @@ module.exports = {
   eslint: {
     ignoreDuringBuilds: true,
   },
+  target: "serverless",
   images: {
     domains: ['cdn.sanity.io'],
   },

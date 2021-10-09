@@ -1,0 +1,14 @@
+@import url('https://fonts.googleapis.com/css2?family=Rasa&display=swap');
+
+body {
+  background-image: radial-gradient(
+    circle,
+    #1a2639,
+    #102631,
+    #132427,
+    #19211f,
+    #1d1e1d
+  );
+
+  font-family: 'Rasa', serif;
+}

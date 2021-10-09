@@ -1,7 +1,7 @@
 import Image from 'next/image';
-import { urlFor } from '../../lib/sanity';
 
-export default function Project({ project }) {
+
+export default function Project({ project, urlFor }) {
   return (
     <div className='flex flex-col rounded-lg shadow-lg overflow-hidden'>
       <div className='flex-shrink-0 bg-white'>

@@ -1,6 +1,6 @@
 import Head from 'next/head';
 import Project from './components/Project';
-import { sanityClient } from '../lib/sanity';
+import { sanityClient, urlFor } from '../lib/sanity';
 
 const projectQuery = `*[_type == 'project']{
   _id,
@@ -36,7 +36,7 @@ export default function Projects({ projects }) {
         <div className='grid grid-cols-1 gap-y-4 sm:grid-cols-2 sm:gap-x-6 sm:gap-y-10 lg:grid-cols-3 lg:gap-x-8'>
           {projects?.length > 0 &&
             projects.map((project) => (
-              <Project project={project} key={project._id} />
+              <Project project={project} key={project._id} urlFor={urlFor} />
             ))}
         </div>
       </div>

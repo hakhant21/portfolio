@@ -1,5 +1,5 @@
 import Image from 'next/image';
-
+import Link from 'next/link'
 
 export default function Project({ project, urlFor }) {
   return (
@@ -18,18 +18,18 @@ export default function Project({ project, urlFor }) {
       </div>
       <div className='flex-1 bg-white p-6 flex flex-col justify-between'>
         <div className='flex-1'>
-          <a href={project.github} className='block mt-2'>
+          <Link passHref={true} href={project.github} className='block mt-2'>
             <p className='text-xl font-semibold text-gray-900 hover:underline'>
               {project.title}
             </p>
             <p className='mt-3 text-base text-gray-500'>
               {project.body.substring(0, 100)}
             </p>
-          </a>
+          </Link>
         </div>
         <div className='mt-6 flex items-center'>
           <div className='flex-shrink-0'>
-            <a href={project.developer.github}>
+            <Link passHref={true} href={project.developer.github}>
               <span className='sr-only'>{project.developer.name}</span>
               <span className=''>
                 <Image
@@ -41,13 +41,13 @@ export default function Project({ project, urlFor }) {
                   height='36'
                 />
               </span>
-            </a>
+            </Link>
           </div>
           <div className='ml-3'>
             <p className='text-sm font-medium text-gray-900'>
-              <a href={project.developer.github} className='hover:underline'>
+              <Link passHref={true} href={project.developer.github} className='hover:underline'>
                 {project.developer.name}
-              </a>
+              </Link>
             </p>
           </div>
         </div>

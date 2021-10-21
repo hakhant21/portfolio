@@ -2,7 +2,7 @@ import { useState } from 'react';
 import { useRouter } from 'next/router';
 import Head from 'next/head';
 import Link from 'next/link';
-import Button from './components/shared/Button';
+import Button from '../components/shared/Button';
 
 export default function Contact() {
   const [name, setName] = useState('');

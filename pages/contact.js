@@ -47,7 +47,7 @@ export default function Contact() {
         <p className='mt-3 text-center text-gray-600 dark:text-gray-400'>
           Feel free to message me or call me
         </p>
-        <div className='grid gap-6 mt-6 md:grid-cols-3'>
+        <div className='grid grid-cols-1 gap-6 mt-6 lg:grid-cols-3'>
           <span className='flex flex-col items-center py-3 text-gray-700 rounded-md dark:text-gray-200 hover:bg-blue-200 dark:hover:bg-blue-500'>
             <svg
               className='w-5 h-5'

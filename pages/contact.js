@@ -131,7 +131,8 @@ export default function Contact() {
             </div>
           </div>
 
-          <div className='w-full mt-4'>
+          <div class name='w-full mx-2 mt-4 MD:mt-0
+'>
             <label
               htmlFor='message'
               className='block mb-2 text-sm font-medium text-gray-600 dark:text-gray-200'>

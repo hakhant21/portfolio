@@ -96,7 +96,7 @@ export default function Contact() {
         </div>
         <form className='mt-6' onSubmit={sendEmail}>
           <div className='flex items-center mx-2 md:flex'>
-            <div className='w-full mx-2'>
+            <div className='w-full'>
               <label
                 htmlFor='name'
                 className='block mb-2 text-sm font-medium text-gray-600 dark:text-gray-200'>
@@ -113,7 +113,7 @@ export default function Contact() {
               />
             </div>
 
-            <div className='w-full mx-2 mt-4 md:mt-0'>
+            <div className='w-full mt-4 md:mt-0'>
               <label
                 htmlFor='email'
                 className='block mb-2 text-sm font-medium text-gray-600 dark:text-gray-200'>
@@ -131,7 +131,7 @@ export default function Contact() {
             </div>
           </div>
 
-          <div class name='w-full mx-2 mt-4 MD:mt-0>
+          <div class name='w-full mt-4 lg:mt-0>
 '>
             <label
               htmlFor='message'

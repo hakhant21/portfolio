@@ -39,7 +39,7 @@ export default function Contact() {
         <link rel='icon' href='/favicon.ico' />
       </Head>
       <section
-        className='py-8 mx-auto sm:max-w-xl md:max-w-full lg:max-w-6xl px-4 lg:px-8
+        className='py-8 mx-auto w-full md:max-w-full lg:max-w-6xl px-4 lg:px-8
         lg:py-12 bg-white rounded-md shadow-md dark:bg-gray-800'>
         <h2 className='text-3xl font-semibold text-center text-gray-800 dark:text-white'>
           Get in touch
@@ -95,7 +95,7 @@ export default function Contact() {
           </span>
         </div>
         <form className='mt-6' onSubmit={sendEmail}>
-          <div className='items-center -mx-2 md:flex'>
+          <div className='flex items-center mx-2 md:flex'>
             <div className='w-full mx-2'>
               <label
                 htmlFor='name'
@@ -125,13 +125,13 @@ export default function Contact() {
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
                 placeholder='Your Email'
-                className='block w-full px-4 py-2 text-gray-700 bg-white border border-gray-300 rounded-md dark:bg-gray-800 dark:text-gray-300 dark:border-gray-600 focus:border-blue-500 dark:focus:border-blue-500 focus:outline-none focus:ring'
+                className='block w-full px-2 py-2 text-gray-700 bg-white border border-gray-300 rounded-md dark:bg-gray-800 dark:text-gray-300 dark:border-gray-600 focus:border-blue-500 dark:focus:border-blue-500 focus:outline-none focus:ring'
                 required
               />
             </div>
           </div>
 
-          <div class name='w-full mx-2 mt-4 MD:mt-0
+          <div class name='w-full mx-2 mt-4 MD:mt-0>
 '>
             <label
               htmlFor='message'

@@ -39,7 +39,7 @@ export default function Contact() {
         <link rel='icon' href='/favicon.ico' />
       </Head>
       <section
-        className='py-8 mx-auto w-full md:max-w-full lg:max-w-6xl px-4 lg:px-12
+        className='py-8 mx-auto w-full md:max-w-full lg:max-w-6xl px-4 md:px-12
         lg:py-12 bg-white rounded-md shadow-md dark:bg-gray-800'>
         <h2 className='text-3xl font-semibold text-center text-gray-800 dark:text-white'>
           Get in touch
@@ -47,7 +47,7 @@ export default function Contact() {
         <p className='mt-3 text-center text-gray-600 dark:text-gray-400'>
           Feel free to message me or call me
         </p>
-        <div className='grid grid-cols-1 gap-6 mt-6 lg:grid-cols-3'>
+        <div className='grid gap-4 mt-6 lg:grid-cols-3'>
           <span className='flex flex-col items-center py-3 text-gray-700 rounded-md dark:text-gray-200 hover:bg-blue-200 dark:hover:bg-blue-500'>
             <svg
               className='w-5 h-5'
@@ -95,11 +95,11 @@ export default function Contact() {
           </span>
         </div>
         <form className='mt-6' onSubmit={sendEmail}>
-          <div className='flex justify-center items-center'>
-            <div className='w-full'>
+          <div className='lg:flex flex-col justify-center items-center'>
+            <div className='w-full md:mt-0'>
               <label
                 htmlFor='name'
-                className='block mb-2 text-sm font-medium text-gray-600 dark:text-gray-200'>
+                className='block mt-2 text-xl font-thin text-gray-600 dark:text-gray-200'>
                 Name
               </label>
               <input
@@ -113,10 +113,10 @@ export default function Contact() {
               />
             </div>
 
-            <div className='w-full mt-4 md:mt-0'>
+            <div className='w-full md:mt-0'>
               <label
                 htmlFor='email'
-                className='block mb-2 text-sm font-medium text-gray-600 dark:text-gray-200'>
+                className='block mt-2 text-lg font-thin text-gray-600 dark:text-gray-200'>
                 E-mail
               </label>
               <input
@@ -124,25 +124,25 @@ export default function Contact() {
                 name='email'
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
-                placeholder='Your Email'
+                placeholder='Your email address ?'
                 className='block w-full px-2 py-2 text-gray-700 bg-white border border-gray-300 rounded-md dark:bg-gray-800 dark:text-gray-300 dark:border-gray-600 focus:border-blue-500 dark:focus:border-blue-500 focus:outline-none focus:ring'
                 required
               />
             </div>
           </div>
 
-          <div class name='w-full mt-4 lg:mt-0>
-'>
+          <div
+            className='w-full lg:mt-0'>
             <label
               htmlFor='message'
-              className='block mb-2 text-sm font-medium text-gray-600 dark:text-gray-200'>
+              className='block mt-2 text-lg font-thin text-gray-600 dark:text-gray-200'>
               Message
             </label>
             <textarea
               name='message'
               value={message}
               onChange={(e) => setMessage(e.target.value)}
-              className='block w-full h-40 px-4 py-2 text-gray-700 bg-white border border-gray-300 rounded-md 
+              className='block w-full h-40 px-2 py-2 font-thin text-gray-700 bg-white border border-gray-300 rounded-md 
               dark:bg-gray-800 dark:text-gray-300 dark:border-gray-600 focus:border-blue-500 dark:focus:border-blue-500 focus:outline-none focus:ring'
               required
             />

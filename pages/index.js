@@ -34,20 +34,17 @@ export default function Home({ developers }) {
                 <p className='mb-6 text-gray-300 text-2xl'>{developer.about}</p>
                 <hr className='mb-5 border-gray-300' />
                 <div className='flex justify-start items-center gap-2'>
-                 
                   <Button>
                     <Link href='/contact' passHref={true}>
-                        Contact
+                      Contact
                     </Link>
                   </Button>
-                
-                  
+
                   <Button>
                     <Link href='/projects' passHref={true}>
-                      Projects 
+                      Projects
                     </Link>
                   </Button>
-                 
                 </div>
               </div>
               <div className='w-full rounded shadow-lg overflow-hidden'>

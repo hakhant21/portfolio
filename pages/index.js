@@ -2,6 +2,7 @@ import Head from 'next/head';
 import Link from 'next/link';
 import Image from 'next/image';
 import { sanityClient, urlFor } from '../lib/sanity';
+import Button from '../components/shared/Button';
 
 const developerQuery = `*[_type == 'developer']{
   _id,
@@ -32,19 +33,21 @@ export default function Home({ developers }) {
                 </h5>
                 <p className='mb-6 text-gray-300 text-2xl'>{developer.about}</p>
                 <hr className='mb-5 border-gray-300' />
-                <div className='grid grid-cols-2 w-full'>
-                  <Link href='/contact' passHref={true}>
-                    <button className='mr-2 text-center items-center px-4 py-2 border border-gray-300 shadow-sm text-lg font-medium rounded-md text-gray-700 bg-white hover:bg-indigo-40 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 text-center'>
-                      Contact
-                    </button>
-                  </Link>
-                  <Link href='/projects' passHref={true}>
-                    <button className='mr-2 text-center 
-
-items-center px-4 py-2 border border-gray-300 shadow-sm text-lg font-medium rounded text-gray-700 bg-white hover:bg-indigo-40 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 text-center'>
-                      Projects
-                    </button>
-                  </Link>
+                <div className='flex justify-start items-center gap-2'>
+                 
+                  <Button>
+                    <Link href='/contact' passHref={true}>
+                        Contact
+                    </Link>
+                  </Button>
+                
+                  
+                  <Button>
+                    <Link href='/projects' passHref={true}>
+                      Projects 
+                    </Link>
+                  </Button>
+                 
                 </div>
               </div>
               <div className='w-full rounded shadow-lg overflow-hidden'>

@@ -14,18 +14,18 @@ export default function Header() {
 
         <ul className='flex items-center'>
           <li>
-            <Link href='/projects' passHref={true}>
-              <button className='py-2 px-4 rounded-md hover:bg-gray-800 transition delay-100 cursor-pointer text-lg font-semibold text-gray-100 text-center'>
+            <button className='py-2 px-4 rounded-md hover:bg-gray-800 transition delay-100 cursor-pointer text-lg font-semibold text-gray-100 text-center'>
+              <Link href='/projects' passHref={true}>
                 My Works
-              </button>
-            </Link>
+              </Link>
+            </button>
           </li>
           <li>
-            <Link href='/contact' passHref={true}>
-              <button className='py-2 px-4 rounded-md hover:bg-gray-800 transition delay-100 cursor-pointer text-lg font-semibold text-gray-100 text-center'>
+            <button className='py-2 px-4 rounded-md hover:bg-gray-800 transition delay-100 cursor-pointer text-lg font-semibold text-gray-100 text-center'>
+              <Link href='/contact' passHref={true}>
                 Get in Touch
-              </button>
-            </Link>
+              </Link>
+            </button>
           </li>
         </ul>
       </div>

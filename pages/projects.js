@@ -44,7 +44,8 @@ export default function Projects({ projects }) {
   );
 }
 
-export async function getServerSideProps(context) {
+export async function getStaticProps(
+) {
   const projects = await sanityClient.fetch(projectQuery);
 
   return {

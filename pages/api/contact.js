@@ -8,11 +8,7 @@ export default (req, res) => {
  
   const data = {
     to: 'hakhant.dev@gmail.com',
-<<<<<<< HEAD
-    from: 'info@hakhant.online',
-=======
     from: 'info@hakhant.tech',
->>>>>>> ab8c8d6ccdb1f26586022f9eddca0576585c4fc0
     subject: 'A new message from portfolio site',
     text: message,
     html: `

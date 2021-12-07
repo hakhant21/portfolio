@@ -1,30 +1,25 @@
-const mail = require('@sendgrid/mail');
+const sgMail = require('@sendgrid/mail');
 
-mail.setApiKey(process.env.SENDGRID_API_KEY);
+sgMail.setApiKey(process.env.SENDGRID_API_KEY);
 
 export default (req, res) => {
-  const body = JSON.parse(req.body);
+  const { name, email, message } = JSON.parse(req.body);
 
-  const results = `
-    NAME: ${body.name}\r\n
-    EMAIL: ${body.email}\r\n
-    MESSAGE: ${body.message}
-  `;
-
+ 
   const data = {
-    to: 'hakhant21@gmail.com',
-    from: 'info@hakhant.online',
+    to: 'hakhant.dev@gmail.com',
+    from: 'info@hakhant.tech',
     subject: 'A new message from portfolio site',
-    text: results.message,
+    text: message,
     html: `
     <div data-role="module-unsubscribe" class="module" role="module" data-type="unsubscribe" data-muid="4e838cf3-9892-4a6d-94d6-170e474d21e5" class="py-6 px-4 rounded-lg w-full h-full">
         <p class="text-lg text-gray-500 font-bold">
-           ${body.message}
+           ${message}
         </p>
     </div>`,
   };
 
-  mail.send(data);
-
-  res.status(200).json({ success: 'Your message have been sent successfully' });
+  sgMail.send(data)
+        .then(res => res.status(200).json({ success: 'Your message have been sent successfully' }))
+        .catch(err => res.status(500).json({ message: err.message}))
 };

@@ -1,41 +1,56 @@
 import { useState } from 'react';
-import { useRouter } from 'next/router';
 import Head from 'next/head';
 import Link from 'next/link';
 import Button from '../components/shared/Button';
 
 export default function Contact() {
-  const [name, setName] = useState('');
-  const [email, setEmail] = useState('');
-  const [message, setMessage] = useState('');
   const [loading, setLoading] = useState(false);
+    const [query, setQuery] = useState({
+      name: '',
+      email: '',
+    });
 
-  const router = useRouter();
-
-  const sendEmail = (e) => {
-    e.preventDefault();
-
-    fetch('/api/contact', {
-      method: 'post',
-      body: JSON.stringify({ email, name, message }),
-    })
-      .then(setLoading(true))
-      .then(
-        setTimeout(() => {
-          router.push(
-            '/',
-            window.alert('Your message has been send successfully  🥰 ')
-          );
-        }, 3000)
-      )
-      .catch((err) => console.log(err));
-  };
-
+    // Update inputs value
+    const handleParam = () => (e) => {
+      const name = e.target.name;
+      const value = e.target.value;
+      setQuery((prevState) => ({
+        ...prevState,
+        [name]: value,
+      }));
+    };
+    // Form Submit function
+    const formSubmit = (e) => {
+      e.preventDefault();
+      const formData = new FormData();
+      Object.entries(query).forEach(([key, value]) => {
+        formData.append(key, value);
+      });
+      fetch('https://getform.io/f/cf98d3bc-31d8-4f58-8121-07d4e2fdeb6e', {
+        method: 'POST',
+        body: formData,
+      })
+        .then(
+          setLoading(
+            true,
+            setTimeout(
+              () => setLoading(false),
+              3000,
+              alert('Message sent successfully 🥰')
+            )
+          )
+        )
+        .then(setQuery({ name: '', email: '', message: '' }))
+        .catch((err) => console.log(err));
+    };
   return (
     <div className='py-4'>
       <Head>
         <title>HAK | Contact Me</title>
-        <meta name='description' content='here is how you can reach me easy right?' />
+        <meta
+          name='description'
+          content='here is how you can reach me easy right?'
+        />
         <link rel='icon' href='/favicon.ico' />
       </Head>
       <section
@@ -94,7 +109,7 @@ export default function Contact() {
             </span>
           </span>
         </div>
-        <form className='mt-6' onSubmit={sendEmail}>
+        <form className='mt-6' onSubmit={formSubmit}>
           <div className='lg:flex flex-col justify-center items-center'>
             <div className='w-full md:mt-0'>
               <label
@@ -104,8 +119,8 @@ export default function Contact() {
               </label>
               <input
                 name='name'
-                value={name}
-                onChange={(e) => setName(e.target.value)}
+                value={query.name}
+                onChange={handleParam()}
                 type='text'
                 placeholder='What you want me to call ?'
                 className='block w-full px-2 py-2 text-gray-700 bg-white border border-gray-300 rounded-md dark:bg-gray-800 dark:text-gray-300 dark:border-gray-600 focus:border-blue-500 dark:focus:border-blue-500 focus:outline-none focus:ring'
@@ -122,8 +137,8 @@ export default function Contact() {
               <input
                 type='email'
                 name='email'
-                value={email}
-                onChange={(e) => setEmail(e.target.value)}
+                value={query.email}
+                onChange={handleParam()}
                 placeholder='Your email address ?'
                 className='block w-full px-2 py-2 text-gray-700 bg-white border border-gray-300 rounded-md dark:bg-gray-800 dark:text-gray-300 dark:border-gray-600 focus:border-blue-500 dark:focus:border-blue-500 focus:outline-none focus:ring'
                 required
@@ -131,8 +146,7 @@ export default function Contact() {
             </div>
           </div>
 
-          <div
-            className='w-full lg:mt-0'>
+          <div className='w-full lg:mt-0'>
             <label
               htmlFor='message'
               className='block mt-2 text-lg font-thin text-gray-600 dark:text-gray-200'>
@@ -140,8 +154,8 @@ export default function Contact() {
             </label>
             <textarea
               name='message'
-              value={message}
-              onChange={(e) => setMessage(e.target.value)}
+              value={query.message}
+              onChange={handleParam()}
               className='block w-full h-40 px-2 py-2 font-thin text-gray-700 bg-white border border-gray-300 rounded-md 
               dark:bg-gray-800 dark:text-gray-300 dark:border-gray-600 focus:border-blue-500 dark:focus:border-blue-500 focus:outline-none focus:ring'
               required

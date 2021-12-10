@@ -34,9 +34,8 @@ export default function Contact() {
           setLoading(
             true,
             setTimeout(
-              () => setLoading(false),
-              3000,
-              alert('Message sent successfully 🥰')
+              () => setLoading(false, alert('Message sent successfully 🥰')),
+              3000
             )
           )
         )

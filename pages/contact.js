@@ -43,7 +43,7 @@ export default function Contact() {
         .catch((err) => console.log(err));
     };
   return (
-    <div className='py-4'>
+    <div className='py-4 mx-4'>
       <Head>
         <title>HAK | Contact Me</title>
         <meta
@@ -155,7 +155,7 @@ export default function Contact() {
               name='message'
               value={query.message}
               onChange={handleParam()}
-              className='block w-full h-40 px-2 py-2 font-thin text-gray-700 bg-white border border-gray-300 rounded-md 
+              className='block w-full h-40 px-2 py-2 font-thin text-gray-700 bg-white border border-gray-300 rounded-md
               dark:bg-gray-800 dark:text-gray-300 dark:border-gray-600 focus:border-blue-500 dark:focus:border-blue-500 focus:outline-none focus:ring'
               required
             />

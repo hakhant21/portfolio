@@ -103,7 +103,7 @@ export default function Contact() {
 
             <span className='mt-2'>
               <Link href='mailto:hakhant.dev@gmail.com'>
-                hakhant.dev@gmail.com
+                hakhant21@gmail.com
               </Link>
             </span>
           </span>

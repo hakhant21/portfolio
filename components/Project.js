@@ -4,7 +4,7 @@ import Link from 'next/link'
 export default function Project({ project, urlFor }) {
   return (
     <div className='flex flex-col rounded-lg shadow-lg overflow-hidden'>
-      <div className='flex-shrink-0 bg-white'>
+      <div className='flex-1 bg-white'>
         <span className='h-10 w-10 rounded-full '>
           <Image
             src={urlFor(project.mainImage).url()}
@@ -16,7 +16,7 @@ export default function Project({ project, urlFor }) {
           />
         </span>
       </div>
-      <div className='bg-white p-6 flex flex-col justify-between'>
+      <div className='bg-white px-4 py-6 lg:px-8 py-10 flex flex-col justify-between'>
         <div className='flex-1'>
           <Link href={project.github} className='block mt-2'>
             <a>

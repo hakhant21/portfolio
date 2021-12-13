@@ -25,7 +25,7 @@ export default function Home({ developers }) {
           developers.map((developer) => (
             <div className='grid gap-6 lg:grid-cols-2' key={developer._id}>
               <div className='lg:pr-1'>
-                <h5 className='mb-4 text-indigo-400 lg:text-3xl text-2xl  font-extrabold leading-none'>
+               <h5 className='mb-4 text-indigo-400 lg:text-3xl text-2xl  font-extrabold leading-none'>
                   Yoo! I'm {developer.name} <br className='hidden sm:block' />
                   <span className='inline-block text-gray-100 lg:text-2xl text-xl mt-4'>
                     Fullstack <br /> Web Developer
@@ -34,42 +34,79 @@ export default function Home({ developers }) {
                 <p className='mb-6 text-gray-300 lg:text-2xl text-xl'>{developer.about}</p>
                 <hr className='mb-5 border-gray-300' />
                 <div className='flex justify-start items-center gap-2'>
-                  <Button>
-                    <Link href='/contact' passHref={true}>
+                 <Link href='/contact' passHref={true}>
+                    <Button className='animite-bounce transition:delay-100'>
                       Contact
-                    </Link>
-                  </Button>
+                    </Button>
+                 </Link>
+                 <Link href='/projects' passHref={true}>
 
-                  <Button>
-                    <Link href='/projects' passHref={true}>
-                      Projects
-                    </Link>
-                  </Button>
-                </div>
+                      <Button className='animite-bounce transition:delay-100'>
+
+                        Works
+
+                     </Button>
+
+                 </Link>    
+                  </div>
+
               </div>
+
               <div className='w-full rounded shadow-lg overflow-hidden'>
+
                 <Image
+
                   layout='responsive'
+
                   width='100'
+
                   height='60'
+
                   src={urlFor(developer.image).url()}
+
                   className='rounded w-full object-cover object-center mb-6'
+
                 />
+
               </div>
+
             </div>
+
           ))}
+
       </div>
+
     </div>
+
   );
+
+}
+export async function getStaticProps() {
+
+  const developers = await sanityClient.fetch(developerQuery);
+
+  return {
+
+    props: {
+
+      developers,
+
+    },
+
+  };
+
 }
 
-export async function getStaticProps() {
-  const developers = await sanityClient.fetch(developerQuery);
-  return {
-    props: {
-      developers,
-    },
-  };
-}
+
+
+
+                  
+
+
+
+            
+                    
+                  
+
 
 

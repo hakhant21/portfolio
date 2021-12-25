@@ -5,7 +5,7 @@ export default function Project({ project, urlFor }) {
   return (
     <div className='flex flex-col rounded-lg shadow-lg overflow-hidden'>
       <div className='flex-1 bg-white'>
-        <span className='h-10 w-10 rounded-full '>
+        <span className='h-10 w-10 rounded-full'>
           <Image
             src={urlFor(project.mainImage).url()}
             alt={project.title}

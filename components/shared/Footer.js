@@ -1,11 +1,12 @@
 import React from 'react';
 import Link from 'next/link';
 export default function Footer() {
+  const date = new Date().getFullYear();
   return (
     <footer className='max-w-6xl mx-auto'>
       <div className='lg:flex justify-between items-center'>
         <h5 className='text-gray-100 font-bold text-lg text-center'>
-          Copyrights © 2021
+          Copyrights © {date}
         </h5>
         <div className='flex justify-center items-center py-4'>
           <Link href='https://www.facebook.com/21st.hak' passHref={true}>
@@ -14,7 +15,7 @@ export default function Footer() {
             </button>
           </Link>
           <Link href='https://www.github.com/hakhant21' passHref={true}>
-            <button className='font-semibold text-gray-100 text-md pr-4'>
+            <button  className='font-semibold text-gray-100 text-md pr-4'>
               Github
             </button>
           </Link>

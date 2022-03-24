@@ -33,7 +33,7 @@ export default function Projects({ projects }) {
             Checkout some of my works here
           </h2>
         </div>
-        <div className='grid grid-cols-1 gap-y-4 sm:grid-cols-2 sm:gap-x-6 sm:gap-y-10 lg:grid-cols-3 lg:gap-x-8'>
+        <div className='grid grid-cols-1 gap-y-4 sm:grid-cols-2 sm:gap-x-6 sm:gap-y-10 lg:grid-cols-3 lg:gap-x-8 lg:gap-y-12'>
           {projects?.length > 0 &&
             projects.map((project) => (
               <Project project={project} key={project._id} urlFor={urlFor} />

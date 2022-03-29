@@ -2,46 +2,33 @@ import { useState } from 'react';
 import Head from 'next/head';
 import Link from 'next/link';
 import Button from '../components/shared/Button';
-
 export default function Contact() {
-  const [loading, setLoading] = useState(false);
-    const [query, setQuery] = useState({
-      name: '',
-      email: '',
-    });
+   const [loading, setLoading] = useState(false);
+   const [mailerState, setMailerState] = useState({
+     name: '',
+     email: '',
+     message: '',
+   });
 
-    // Update inputs value
-    const handleParam = () => (e) => {
-      const name = e.target.name;
-      const value = e.target.value;
-      setQuery((prevState) => ({
-        ...prevState,
-        [name]: value,
-      }));
-    };
-    // Form Submit function
-    const formSubmit = (e) => {
-      e.preventDefault();
-      const formData = new FormData();
-      Object.entries(query).forEach(([key, value]) => {
-        formData.append(key, value);
-      });
-      fetch('https://getform.io/f/cf98d3bc-31d8-4f58-8121-07d4e2fdeb6e', {
-        method: 'POST',
-        body: formData,
-      })
-        .then(
-          setLoading(
-            true,
-            setTimeout(
-              () => setLoading(false, alert('Message sent successfully 🥰')),
-              3000
-            )
-          )
-        )
-        .then(setQuery({ name: '', email: '', message: '' }))
-        .catch((err) => console.log(err));
-    };
+   function handleStateChange(e) {
+     setMailerState((prevState) => ({
+       ...prevState,
+       [e.target.name]: e.target.value,
+     }));
+   }
+      const submitEmail = async (e) => {
+        e.preventDefault();
+        setLoading(true);
+        const res = await fetch('api/contact/')
+        if (res.status === 200) {
+             setMailerState({
+               name: '',
+               email: '',
+               message: '',
+             }, setLoading(false));
+        }
+        setTimeout(() => alert('😍 Message sent successfully 😍'), 1000);
+      };
   return (
     <div className='py-4 mx-4'>
       <Head>
@@ -102,13 +89,11 @@ export default function Contact() {
             </svg>
 
             <span className='mt-2'>
-              <Link href='mailto:hakhant.dev@gmail.com'>
-                hakhant21@gmail.com
-              </Link>
+              <Link href='mailto:info@hakhant.tech'>info@hakhant.tech</Link>
             </span>
           </span>
         </div>
-        <form className='mt-6' onSubmit={formSubmit}>
+        <form className='mt-6' onSubmit={submitEmail}>
           <div className='lg:flex flex-col justify-center items-center'>
             <div className='w-full md:mt-0'>
               <label
@@ -118,9 +103,9 @@ export default function Contact() {
               </label>
               <input
                 name='name'
-                value={query.name}
-                onChange={handleParam()}
                 type='text'
+                value={mailerState.name}
+                onChange={handleStateChange}
                 placeholder='What you want me to call ?'
                 className='block w-full px-2 py-2 text-gray-700 bg-white border border-gray-300 rounded-md dark:bg-gray-800 dark:text-gray-300 dark:border-gray-600 focus:border-blue-500 dark:focus:border-blue-500 focus:outline-none focus:ring'
                 required
@@ -136,8 +121,8 @@ export default function Contact() {
               <input
                 type='email'
                 name='email'
-                value={query.email}
-                onChange={handleParam()}
+                value={mailerState.email}
+                onChange={handleStateChange}
                 placeholder='Your email address ?'
                 className='block w-full px-2 py-2 text-gray-700 bg-white border border-gray-300 rounded-md dark:bg-gray-800 dark:text-gray-300 dark:border-gray-600 focus:border-blue-500 dark:focus:border-blue-500 focus:outline-none focus:ring'
                 required
@@ -153,8 +138,8 @@ export default function Contact() {
             </label>
             <textarea
               name='message'
-              value={query.message}
-              onChange={handleParam()}
+              value={mailerState.message}
+              onChange={handleStateChange}
               className='block w-full h-40 px-2 py-2 font-thin text-gray-700 bg-white border border-gray-300 rounded-md
               dark:bg-gray-800 dark:text-gray-300 dark:border-gray-600 focus:border-blue-500 dark:focus:border-blue-500 focus:outline-none focus:ring'
               required

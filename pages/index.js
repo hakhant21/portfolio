@@ -3,7 +3,6 @@ import Link from 'next/link';
 import Image from 'next/image';
 import { sanityClient, urlFor } from '../lib/sanity';
 import Button from '../components/shared/Button';
-import MessengerCustomerChat from 'react-messenger-customer-chat';
 
 const developerQuery = `*[_type == 'developer']{
   _id,
@@ -24,22 +23,22 @@ export default function Home({ developers }) {
         />
         <link rel='icon' href='/favicon.ico' />
       </Head>
-      <div className='py-8 mx-auto w-full  md:max-w-full lg:max-w-6xl lg:px-0 px-4 lg:py-12'>
+      <div className='w-full px-4 py-8 mx-auto md:max-w-full lg:max-w-6xl lg:px-0 lg:py-12'>
         {developers?.length > 0 &&
           developers.map((developer) => (
             <div className='grid gap-6 lg:grid-cols-2' key={developer._id}>
               <div className='lg:pr-1'>
-                <h5 className='mb-4 text-indigo-400 lg:text-3xl text-2xl  font-extrabold leading-none'>
+                <h5 className='mb-4 text-2xl font-extrabold leading-none text-indigo-400 lg:text-3xl'>
                   Yoo! I'm {developer.name} <br className='hidden sm:block' />
-                  <span className='inline-block text-gray-100 lg:text-2xl text-xl mt-4'>
+                  <span className='inline-block mt-4 text-xl text-gray-100 lg:text-2xl'>
                     Fullstack <br /> Web Developer
                   </span>
                 </h5>
-                <p className='mb-6 text-gray-300 lg:text-2xl text-xl'>
+                <p className='mb-6 text-xl text-gray-300 lg:text-2xl'>
                   {developer.about}
                 </p>
                 <hr className='mb-5 border-gray-300' />
-                <div className='flex justify-start items-center gap-2'>
+                <div className='flex items-center justify-start gap-2'>
                   <Button className='animite-bounce transition:delay-100'>
                     <Link href='/contact' passHref={true}>
                       Contact
@@ -54,22 +53,18 @@ export default function Home({ developers }) {
                 </div>
               </div>
 
-              <div className='w-full rounded shadow-lg overflow-hidden'>
+              <div className='w-full overflow-hidden rounded shadow-lg'>
                 <Image
                   layout='responsive'
                   width='100'
                   height='60'
                   src={urlFor(developer.image).url()}
-                  className='rounded w-full object-cover object-center mb-6'
+                  className='object-cover object-center w-full mb-6 rounded'
                 />
               </div>
             </div>
           ))}
       </div>
-      <MessengerCustomerChat
-        pageId={process.env.REACT_APP_ID}
-        appId={process.env.REACT_PAGE_ID}
-      />
     </div>
   );
 }

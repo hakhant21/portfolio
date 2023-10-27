@@ -39,27 +39,27 @@ export default function Home({ developers }) {
                 </p>
                 <hr className='mb-5 border-gray-300' />
                 <div className='flex items-center justify-start gap-2'>
-                  <Button className='animite-bounce transition:delay-100'>
-                    <Link href='/contact' passHref={true}>
-                      Contact
-                    </Link>
-                  </Button>
+                  <Link href='/contact' passHref={true}>
+                    <Button className='animite-bounce transition:delay-100'>
+                        Contact
+                    </Button>
+                  </Link>
 
-                  <Button className='animite-bounce transition:delay-100'>
-                    <Link href='/projects' passHref={true}>
-                      Works
-                    </Link>
-                  </Button>
+                  <Link href='/projects' passHref={true}>
+                    <Button className='animite-bounce transition:delay-100'>
+                        Works
+                    </Button>
+                  </Link>
                 </div>
               </div>
 
-              <div className='w-full overflow-hidden rounded shadow-lg'>
+              <div className='w-full overflow-hidden rounded'>
                 <Image
                   layout='responsive'
                   width='100'
-                  height='60'
+                  height='70'
                   src={urlFor(developer.image).url()}
-                  className='object-cover object-center w-full mb-6 rounded'
+                  className='object-cover object-center w-full mb-6 rounded overflow-hidden'
                 />
               </div>
             </div>

@@ -39,17 +39,17 @@ export default function Home({ developers }) {
                 </p>
                 <hr className='mb-5 border-gray-300' />
                 <div className='flex items-center justify-start gap-2'>
-                  <Link href='/contact' passHref={true}>
+                 
                     <Button className='animite-bounce transition:delay-100'>
-                        Contact
+                      <Link href='/contact' passHref={true}>
+                          Contact
+                      </Link>
                     </Button>
-                  </Link>
-
-                  <Link href='/projects' passHref={true}>
                     <Button className='animite-bounce transition:delay-100'>
-                        Works
+                      <Link href='/projects' passHref={true}>
+                          Works
+                      </Link>
                     </Button>
-                  </Link>
                 </div>
               </div>
 

@@ -89,7 +89,7 @@ export default function Contact() {
             </svg>
 
             <span className='mt-2'>
-              <Link href='mailto:info@hakhant.tech'>info@hakhant.tech</Link>
+              <Link href='mailto:hakhant21@gmail.com'>hakhant21@gmail.com</Link>
             </span>
           </span>
         </div>

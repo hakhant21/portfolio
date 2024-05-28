@@ -5,7 +5,7 @@
 
 - 📫 How to reach me **hakhant21@gmail.com**
 
-- 👨‍💻 Have a website? **https://hakhant.tech**
+- 👨‍💻 Have a website? **https://hakhant.online**
 
 
 - ⚡ Fun fact **Happy Coding**

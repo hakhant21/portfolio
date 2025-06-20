@@ -35,14 +35,14 @@ export default function Home() {
               <motion.button
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
-                className="bg-indigo-600 hover:bg-indigo-500 text-white px-6 py-3 rounded-md transition-colors"
+                className="bg-indigo-600 hover:bg-indigo-500 text-white px-6 py-3 rounded-md transition-colors cursor-pointer"
               >
                 <Link href="/contact">Hire Me</Link>
               </motion.button>
               <motion.button
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
-                className="border border-indigo-400 text-indigo-400 hover:bg-indigo-900/30 px-6 py-3 rounded-md transition-colors"
+                className="border border-indigo-400 text-indigo-400 hover:bg-indigo-900/30 px-6 py-3 rounded-md transition-colors cursor-pointer"
               >
                 <Link href="/projects">View Work</Link>
               </motion.button>

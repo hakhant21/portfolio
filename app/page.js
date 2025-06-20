@@ -2,9 +2,7 @@
 
 import { motion } from 'framer-motion'
 import Link from 'next/link'
-import { FaLaravel, FaServer, FaCloud, FaVuejs, FaDocker } from 'react-icons/fa'
-import { SiMysql } from 'react-icons/si'
-import { IoHardwareChipOutline } from 'react-icons/io5' // Alternative IoT icon
+import { tools } from '@/assets/asset'
 
 export default function Home() {
   return (
@@ -59,7 +57,7 @@ export default function Home() {
               <div className="absolute inset-0 bg-gradient-to-br from-indigo-500 to-purple-600 rounded-full blur-xl opacity-50"></div>
               <div className="relative w-full h-full rounded-full overflow-hidden border-4 border-midnight-700">
                 <img 
-                  src="/profile.jpg" 
+                  src="/profile.png" 
                   alt="Developer Profile" 
                   className="w-full h-full object-cover"
                 />
@@ -75,18 +73,9 @@ export default function Home() {
           viewport={{ once: true }}
           className="mt-20"
         >
-          <h3 className="text-2xl font-semibold text-white mb-6">Core Expertise</h3>
+          <h3 className="text-2xl font-semibold text-white mb-6">Demonstrated expertise in...</h3>
           <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
-            {[
-              { icon: <FaVuejs className="text-green-500 text-xl" />, name: 'Vue', desc: 'Frontend development' },
-              { icon: <FaLaravel className="text-red-500 text-xl" />, name: 'Laravel', desc: 'Backend systems' },
-              { icon: <FaCloud className="text-amber-400 text-xl" />, name: 'Proxmox', desc: 'Homelab' },
-              { icon: <SiMysql className="text-blue-400 text-xl" />, name: 'Database', desc: 'Time-series data' },
-              { icon: <IoHardwareChipOutline className="text-indigo-400 text-xl" />, name: 'IoT', desc: 'Device management' },
-              { icon: <FaDocker className="text-cyan-400 text-xl" />, name: 'Docker', desc: 'Containerization' },
-              { icon: <FaServer className="text-indigo-400 text-xl" />, name: 'APIs', desc: 'Real-time data' },
-              { icon: <FaCloud className="text-cyan-400 text-xl" />, name: 'Cloud', desc: 'Scalable solutions' }
-            ].map((skill, i) => (
+            {tools.map((skill, i) => (
               <motion.div
                 key={i}
                 whileHover={{ y: -5 }}

@@ -1,103 +1,135 @@
-import Image from "next/image";
+'use client'
+
+import { motion } from 'framer-motion'
+import Link from 'next/link'
+import { FaLaravel, FaServer, FaCloud, FaVuejs, FaDocker } from 'react-icons/fa'
+import { SiMysql } from 'react-icons/si'
+import { IoHardwareChipOutline } from 'react-icons/io5' // Alternative IoT icon
 
 export default function Home() {
   return (
-    <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
-      <main className="flex flex-col gap-[32px] row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="list-inside list-decimal text-sm/6 text-center sm:text-left font-[family-name:var(--font-geist-mono)]">
-          <li className="mb-2 tracking-[-.01em]">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] px-1 py-0.5 rounded font-[family-name:var(--font-geist-mono)] font-semibold">
-              app/page.js
-            </code>
-            .
-          </li>
-          <li className="tracking-[-.01em]">
-            Save and see your changes instantly.
-          </li>
-        </ol>
+    <section className="py-20 bg-gradient-to-br from-midnight-800 to-midnight-900 min-h-screen">
+      <div className="container mx-auto px-6">
+        {/* Hero Section */}
+        <div className="flex flex-col md:flex-row items-center justify-between gap-12">
+          <motion.div
+            initial={{ opacity: 0, x: -20 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.6 }}
+            className="md:w-1/2"
+          >
+            <h1 className="text-4xl md:text-5xl font-bold text-white mb-6">
+              Hi, I'm a <span className="text-indigo-400">Laravel</span> Developer
+            </h1>
+            <div className="text-lg text-gray-300 mb-8">
+              I build robust backend systems and APIs with Laravel, specializing in:
+              <ul className="list-disc list-inside space-y-2 mt-3 ml-4">
+                <li>E-commerce solutions</li>
+                <li>SAAS platforms</li>
+                <li>Enterprise applications</li>
+                <li>Real-time fuel monitoring with IoT devices</li>
+                <li>Cloud-connected sensor systems</li>
+              </ul>
+            </div>
+            <div className="flex gap-4">
+              <motion.button
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+                className="bg-indigo-600 hover:bg-indigo-500 text-white px-6 py-3 rounded-md transition-colors"
+              >
+                <Link href="/contact">Hire Me</Link>
+              </motion.button>
+              <motion.button
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+                className="border border-indigo-400 text-indigo-400 hover:bg-indigo-900/30 px-6 py-3 rounded-md transition-colors"
+              >
+                <Link href="/projects">View Work</Link>
+              </motion.button>
+            </div>
+          </motion.div>
 
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:w-auto"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
+          <motion.div
+            initial={{ opacity: 0, x: 20 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.6, delay: 0.2 }}
+            className="md:w-1/2"
           >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 w-full sm:w-auto md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
-          </a>
+            <div className="relative w-64 h-64 md:w-80 md:h-80 mx-auto">
+              <div className="absolute inset-0 bg-gradient-to-br from-indigo-500 to-purple-600 rounded-full blur-xl opacity-50"></div>
+              <div className="relative w-full h-full rounded-full overflow-hidden border-4 border-midnight-700">
+                <img 
+                  src="/profile.jpg" 
+                  alt="Developer Profile" 
+                  className="w-full h-full object-cover"
+                />
+              </div>
+            </div>
+          </motion.div>
         </div>
-      </main>
-      <footer className="row-start-3 flex gap-[24px] flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
+
+        {/* Core Skills Section - Now with IoT */}
+        <motion.section 
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          viewport={{ once: true }}
+          className="mt-20"
         >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
+          <h3 className="text-2xl font-semibold text-white mb-6">Core Expertise</h3>
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+            {[
+              { icon: <FaVuejs className="text-green-500 text-xl" />, name: 'Vue', desc: 'Frontend development' },
+              { icon: <FaLaravel className="text-red-500 text-xl" />, name: 'Laravel', desc: 'Backend systems' },
+              { icon: <FaCloud className="text-amber-400 text-xl" />, name: 'Proxmox', desc: 'Homelab' },
+              { icon: <SiMysql className="text-blue-400 text-xl" />, name: 'Database', desc: 'Time-series data' },
+              { icon: <IoHardwareChipOutline className="text-indigo-400 text-xl" />, name: 'IoT', desc: 'Device management' },
+              { icon: <FaDocker className="text-cyan-400 text-xl" />, name: 'Docker', desc: 'Containerization' },
+              { icon: <FaServer className="text-indigo-400 text-xl" />, name: 'APIs', desc: 'Real-time data' },
+              { icon: <FaCloud className="text-cyan-400 text-xl" />, name: 'Cloud', desc: 'Scalable solutions' }
+            ].map((skill, i) => (
+              <motion.div
+                key={i}
+                whileHover={{ y: -5 }}
+                className="flex items-center gap-3 bg-midnight-700/80 p-4 rounded-lg border border-midnight-600"
+              >
+                <span>{skill.icon}</span>
+                <div>
+                  <p className="font-medium text-white">{skill.name}</p>
+                  <p className="text-xs text-gray-400">{skill.desc}</p>
+                </div>
+              </motion.div>
+            ))}
+          </div>
+        </motion.section>
+
+        {/* IoT Specific Capabilities */}
+        <motion.div 
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          viewport={{ once: true }}
+          className="mt-16 bg-midnight-700/50 p-6 rounded-xl border border-midnight-600"
         >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
-    </div>
-  );
+          <h3 className="text-xl font-semibold text-white mb-4">IoT & Real-Time Monitoring</h3>
+          <ul className="grid grid-cols-1 md:grid-cols-2 gap-4 text-gray-300">
+            <li className="flex items-start">
+              <span className="text-indigo-400 mr-2">▹</span>
+              <span>Real Time Fuel management monitoring systems</span>
+            </li>
+            <li className="flex items-start">
+              <span className="text-indigo-400 mr-2">▹</span>
+              <span>Device-to-cloud data pipelines</span>
+            </li>
+            <li className="flex items-start">
+              <span className="text-indigo-400 mr-2">▹</span>
+              <span>Data Syncronization with cloud</span>
+            </li>
+            <li className="flex items-start">
+              <span className="text-indigo-400 mr-2">▹</span>
+              <span>Custom sensor integration</span>
+            </li>
+          </ul>
+        </motion.div>
+      </div>
+    </section>
+  )
 }

@@ -8,7 +8,7 @@ import {
   FaCloud,
   FaRoute,
 } from "react-icons/fa";
-import { FiCode, FiCpu, FiDatabase, FiServer } from "react-icons/fi";
+import { FiCode, FiCpu, FiDatabase, FiGlobe, FiServer } from "react-icons/fi";
 import { IoHardwareChipOutline } from "react-icons/io5";
 
 export const tools = [
@@ -105,8 +105,8 @@ export const experiences = [
 export const skills = [
   { name: "Laravel", icon: <FiServer className="w-5 h-5" />, level: "Expert" },
   {
-    name: "API Development",
-    icon: <FiCpu className="w-5 h-5" />,
+    name: "API",
+    icon: <FiGlobe className="w-5 h-5" />,
     level: "Expert",
   },
   { name: "PHP", icon: <FiCode className="w-5 h-5" />, level: "Expert" },

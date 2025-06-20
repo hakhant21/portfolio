@@ -5,7 +5,7 @@ import { ThemeProvider } from "@/components/ThemeProvider";
 
 export const metadata = {
   title: "Htet Aung Khant",
-  description: "Professional portfolio with dark theme",
+  description: "Backend Developer & API Specialist",
 };
 
 export default function RootLayout({ children }) {

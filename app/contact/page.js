@@ -187,13 +187,20 @@ export default function ContactPage() {
                   </div>
                   
                   {state.status && (
-                    <div className={`p-4 rounded-md border ${
-                      state.status === 'success' 
-                        ? 'bg-green-500/20 border-green-500 text-green-300' 
-                        : 'bg-red-500/20 border-red-500 text-red-300'
-                    }`}>
-                      {state.message}
-                    </div>
+                    <motion.div
+                      initial={{ opacity: 0, x: 20 }}
+                      animate={{ opacity: 1, x: 0 }}
+                      transition={{ duration: 0.6 }}
+                      className="text-center mb-16"
+                    >
+                      <div className={`p-4 rounded-md border ${
+                        state.status === 'success' 
+                          ? 'bg-green-500/20 border-green-500 text-green-300' 
+                          : 'bg-red-500/20 border-red-500 text-red-300'
+                      }`}>
+                        {state.message}
+                      </div>
+                    </motion.div>
                   )}
                   
                   <motion.button

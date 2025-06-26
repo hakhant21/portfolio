@@ -73,9 +73,9 @@ export async function sendEmail(formData) {
 
   // Email options
   const mailOptions = {
-    from: `"Website Contact" ${process.env.RECEIVER_EMAIL}>`,
-    to: process.env.SENDER_EMAIL || 'mail@hakhant.site',
-    subject: `New Contact: ${name}`,
+    from: `"Website Contact" ${process.env.SENDER_EMAIL}>`,
+    to: process.env.RECIPIENT_EMAIL,
+    subject: `New Contact: ${name} - ${email} from hakhant.site`,
     text: `
       Name: ${name}
       Email: ${email}

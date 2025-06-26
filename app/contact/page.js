@@ -3,7 +3,7 @@
 import { motion } from 'framer-motion'
 import { useState } from 'react'
 import { FiMail, FiUser, FiMessageSquare, FiPhone } from 'react-icons/fi'
-import { sendEmail } from '@/actions/email'
+import { sendEmail } from '@/app/actions/email'
 
 export default function ContactPage() {
   const [formData, setFormData] = useState({

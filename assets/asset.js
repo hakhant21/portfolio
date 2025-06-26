@@ -5,10 +5,9 @@ import {
   FaNodeJs,
   FaServer,
   FaVuejs,
-  FaCloud,
   FaRoute,
 } from "react-icons/fa";
-import { FiCode, FiCpu, FiDatabase, FiGlobe, FiServer } from "react-icons/fi";
+import { FiCode, FiDatabase, FiGlobe, FiServer } from "react-icons/fi";
 import { IoHardwareChipOutline } from "react-icons/io5";
 
 export const tools = [
@@ -119,4 +118,50 @@ export const skills = [
   { name: "Node.js", icon: <FiCode className="w-5 h-5" />, level: "Advanced" },
   { name: "React", icon: <FiCode className="w-5 h-5" />, level: "Advanced" },
   { name: "Docker", icon: <FiCode className="w-5 h-5" />, level: "Advanced" },
+];
+
+export const projects = [
+  {
+     id: 1,
+     title: 'Real Time Fuel Monitoring and Management System',
+     description: 'A real-time fuel monitoring and management system for monitoring and managing fuel consumption and inventory',
+     technologies: ['Laravel', 'Nextjs', 'Tailwind', 'Mosquitto', 'Redis', 'MySQL', 'Docker'],
+     image: 'fms.png',
+  },
+  {
+    id: 2,
+    title: 'Human Resource Management System',
+    description: 'A complete HRMS system for managing employees, departments, and payroll',
+    technologies: ['Laravel', 'MySql', 'Bootstrap', 'Blade', 'Jquery'],
+    image: 'hrms.png',
+  },
+  {
+    id: 3,
+    title: 'Mosquitto Client (Laravel Package )',
+    description: 'This is a simple Laravel wrapper for interacting with MQTT brokers using the PhpMqtt\Client library. It provides an easy way to publish and subscribe to topics, and handle MQTT connections.',
+    technologies: ['PHP', 'Laravel', 'Composer', 'Mosquitto'],
+    image: 'mqtt.png',
+  },
+  
+  {
+     id: 4,
+     title: 'Sudhamma Real Estate',
+     description: 'Online real estate platforms to quickly find properties. Users apply filters such as location, price, property type (house, apartment, land, commercial), and transaction type (rent or sale)',
+     technologies: ['Nextjs', 'Tailwind', 'Nodejs', 'MySQL'],
+     image: 'sudhmma.jpg',
+  },
+  {
+    id: 5,
+    title: 'Student Management System',
+    description: 'A complete student management system for managing students, teachers, and classes ',
+    technologies: ['Laravel', 'Vuejs', 'Inertia', 'Tailwind'],
+    image: 'sms.png',
+  },
+  {
+    id: 6,
+    title: 'Convert (Laravel Package)',
+    description: 'Easy to use laravel package for converting date, number, nrc to english and myanmar.',
+    technologies: ['Laravel', 'Composer', 'PHP'],
+    image: 'convert.png',
+  }
 ];

@@ -2,29 +2,7 @@
 
 import { motion } from 'framer-motion'
 
-const projects = [
-  {
-    id: 1,
-    title: 'E-commerce API',
-    description: 'A complete RESTful API for an e-commerce platform with payment integration, inventory management, and user authentication.',
-    technologies: ['Laravel', 'MySQL', 'JWT', 'Stripe API'],
-    image: '/project-1.jpg',
-  },
-  {
-    id: 2,
-    title: 'SAAS Platform',
-    description: 'Subscription-based software with multi-tenancy architecture, role-based access control, and automated billing.',
-    technologies: ['Laravel', 'Vue.js', 'PostgreSQL', 'Redis'],
-    image: '/project-2.jpg',
-  },
-  {
-    id: 3,
-    title: 'Real-time Analytics Dashboard',
-    description: 'Dashboard with real-time data visualization and reporting for business intelligence.',
-    technologies: ['Laravel', 'Livewire', 'Chart.js', 'WebSockets'],
-    image: '/project-3.jpg',
-  },
-]
+import { projects } from '@/assets/asset'
 
 export default function ProjectsPage() {
   return (
@@ -50,11 +28,11 @@ export default function ProjectsPage() {
               whileHover={{ y: -5 }}
               className="bg-midnight-700/80 backdrop-blur-sm rounded-lg overflow-hidden shadow-lg hover:shadow-xl transition-shadow border border-midnight-600"
             >
-              <div className="h-48 bg-gradient-to-br from-midnight-600 to-midnight-700 flex items-center justify-center">
+              <div className="h-56 bg-gradient-to-br from-midnight-600 to-midnight-700 flex items-center justify-center">
                 <img 
                   src={project.image} 
                   alt={project.title} 
-                  className="w-full h-full object-cover"
+                  className="w-full h-full object-fit"
                 />
               </div>
               <div className="p-6">
@@ -67,9 +45,6 @@ export default function ProjectsPage() {
                     </span>
                   ))}
                 </div>
-                <button className="text-indigo-400 font-medium hover:text-indigo-300 transition-colors">
-                  View Details →
-                </button>
               </div>
             </motion.div>
           ))}

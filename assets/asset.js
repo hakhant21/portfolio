@@ -23,7 +23,7 @@ export const tools = [
   },
   {
     icon: <FaNodeJs className="text-sky-500 text-xl" />,
-    name: "Jvascript",
+    name: "Node.js",
     desc: "Backend Development",
   },
   {

@@ -8,6 +8,9 @@ importers:
 
   .:
     dependencies:
+      '@next/env':
+        specifier: ^15.3.4
+        version: 15.3.4
       framer-motion:
         specifier: ^12.18.1
         version: 12.18.1(react-dom@19.1.0(react@19.1.0))(react@19.1.0)

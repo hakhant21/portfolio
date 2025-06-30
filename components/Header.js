@@ -7,7 +7,7 @@ import { FiMenu, FiX } from 'react-icons/fi'
 
 export default function Header() {
   const [isOpen, setIsOpen] = useState(false)
-  const navItems = ['About', 'Projects', 'Contact']
+  const navItems = ['About', 'Project', 'Contact']
 
   return (
     <header className="sticky top-0 z-50 bg-dark-900/80 backdrop-blur-sm border-b border-dark-700">

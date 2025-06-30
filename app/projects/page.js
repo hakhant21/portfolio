@@ -36,7 +36,7 @@ export default function ProjectsPage() {
                 />
               </div>
               <div className="p-6">
-                <h3 className="text-xl font-semibold text-white mb-2">{project.title}</h3>
+                <h3 className="text-lg font-semibold text-white mb-2">{project.title}</h3>
                 <p className="text-gray-300 mb-4">{project.description}</p>
                 <div className="flex flex-wrap gap-2 mb-4">
                   {project.technologies.map(tech => (

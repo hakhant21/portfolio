@@ -1,0 +1,24 @@
+name: Auto-Merge Branches ( Portofolio )
+
+on:
+  push:
+    branches:
+      - hak-dev
+
+jobs:
+  merge-to-main:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Merge hak-dev into main
+        run: |
+          git config --global user.name "hakhant21"
+          git config --global user.email "hakhant21@gmail.com"
+          git fetch origin
+          git checkout main
+          git merge hak-dev --no-ff -m "Auto-merge: hak-dev to main [skip ci]"
+          git push origin main
